@@ -1,0 +1,42 @@
+name: Bug report
+description: Report reproducible incorrect behavior. Never disclose a vulnerability here.
+title: '[Bug]: '
+labels: ['bug', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security vulnerabilities must be reported privately through the Security tab.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include safe configuration with all secrets removed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, tokens, private data, and vulnerability details.
+          required: true

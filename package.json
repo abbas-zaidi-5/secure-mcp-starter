@@ -1,0 +1,51 @@
+{
+  "name": "secure-mcp-starter",
+  "version": "0.1.0",
+  "description": "A security-first TypeScript starter for stateless Model Context Protocol servers.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
+    "dev": "tsx watch src/http.ts",
+    "dev:stdio": "tsx watch src/stdio.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "start": "node dist/http.js",
+    "start:stdio": "node dist/stdio.js",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "express": "5.1.0",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.1.0",
+    "@vitest/coverage-v8": "4.1.10",
+    "eslint": "10.8.0",
+    "prettier": "3.6.2",
+    "tsx": "4.20.3",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.65.0",
+    "vitest": "4.1.10"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.10"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "typescript",
+    "security",
+    "ai-agents"
+  ],
+  "license": "MIT"
+}

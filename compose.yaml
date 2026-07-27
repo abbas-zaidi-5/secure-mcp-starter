@@ -1,0 +1,15 @@
+services:
+  mcp:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - '127.0.0.1:3000:3000'
+    read_only: true
+    tmpfs:
+      - /tmp:noexec,nosuid,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

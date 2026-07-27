@@ -1,0 +1,30 @@
+name: Design proposal
+description: Propose a feature or change to a trust boundary.
+title: '[Design]: '
+labels: ['design', 'needs-triage']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete user or operator problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed design
+      description: Include data flow and failure behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: Security impact
+      description: Describe permissions, data, abuse cases, and changed trust boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
